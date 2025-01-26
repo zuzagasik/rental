@@ -2,8 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
-    phone_number = models.CharField(max_length=20)
-    address = models.CharField(max_length=200)
+    email = models.EmailField(unique=True)
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
@@ -25,7 +24,7 @@ class Rental(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     equipment = models.ForeignKey(Equipment, on_delete=models.CASCADE)
     rental_date = models.DateField()
-    return_date = models.DateField()
+    return_date = models.DateField(null=True, blank=True)
     rental_status = models.CharField(max_length=50)
 
     def __str__(self):
