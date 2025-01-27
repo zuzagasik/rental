@@ -117,12 +117,6 @@ class IsUser(permissions.BasePermission):
 
 schema_view = get_swagger_view(title='Sports Equipment Rental API')
 
-urlpatterns = [
-    # ...
-    path('docs/', schema_view),
-    # ...
-]
-
 
 # API Views
 

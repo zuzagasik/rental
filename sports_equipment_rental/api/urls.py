@@ -8,8 +8,8 @@ urlpatterns = [
     path('categories/', CategoryView.as_view()),
     path('equipment/', EquipmentView.as_view()),
     path('rentals/', RentalView.as_view()),
-    path('persons/', views.person_list),
-    path('persons/<int:pk>/', views.person_detail),
+    #path('persons/', views.person_list),
+    #path('persons/<int:pk>/', views.person_detail),
     path('persons/update/<int:pk>/', views.person_update),
     path('persons/delete/<int:pk>/', views.person_delete),
     path('positions/', views.position_list),
@@ -20,4 +20,5 @@ urlpatterns = [
     path("position/<int:pk>/members/", views.PositionMemberView.as_view()),
     path('api/logout/', views.LogoutView.as_view(), name='api_logout'),
     path('team/<int:pk>/', views.TeamDetail.as_view(),  name='team_detail'),
+    path('docs/', views.schema_view),
 ]
